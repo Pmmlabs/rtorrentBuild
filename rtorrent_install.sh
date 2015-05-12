@@ -23,18 +23,19 @@ cd ../$libtorrent
 cd ../$rtorrent
 ./configure --prefix=`pwd`/../dist PKG_CONFIG_PATH=`pwd`/../dist/lib/pkgconfig/ && make && make install
 
+cd ..
 mkdir ./dist/bin/download
 mkdir ./dist/bin/session
 
-echo "encoding_list = UTF-8\
-download_rate = 0\
-upload_rate = 0\
-directory = ./download\
-session = ./session\
-check_hash = no\
-use_udp_trackers = yes\
-dht = auto\
-dht_port = 6881\
+echo -e "encoding_list = UTF-8\n\
+download_rate = 0\n\
+upload_rate = 0\n\
+directory = ./download\n\
+session = ./session\n\
+check_hash = no\n\
+use_udp_trackers = yes\n\
+dht = auto\n\
+dht_port = 6881\n\
 peer_exchange = yes" > ./dist/bin/rtorrent.rc
 
 echo "./rtorrent -o import=./rtorrent.rc" > ./dist/bin/rt.sh
