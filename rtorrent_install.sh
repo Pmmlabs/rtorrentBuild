@@ -28,15 +28,16 @@ mkdir ./dist/bin/download
 mkdir ./dist/bin/session
 
 echo -e "encoding_list = UTF-8\n\
-download_rate = 0\n\
-upload_rate = 0\n\
+download_rate = 1000\n\
+upload_rate = 1000\n\
 directory = ./download\n\
 session = ./session\n\
+session_save = yes\n\
 check_hash = no\n\
 use_udp_trackers = yes\n\
 dht = auto\n\
 dht_port = 6881\n\
 peer_exchange = yes" > ./dist/bin/rtorrent.rc
 
-echo "./rtorrent -o import=./rtorrent.rc" > ./dist/bin/rt.sh
+echo -e "while true; do; ./rtorrent -o import=./rtorrent.rc; done" > ./dist/bin/rt.sh
 chmod +x ./dist/bin/rt.sh
