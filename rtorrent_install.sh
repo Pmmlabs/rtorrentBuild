@@ -40,5 +40,5 @@ dht_port = 7011\n\
 port_range=7000-7010\n\
 peer_exchange = yes" > ./dist/bin/rtorrent.rc
 
-echo -e "while true; do; ./rtorrent -o import=./rtorrent.rc; done" > ./dist/bin/rt.sh
+echo -e "while true; do ./rtorrent -o import=./rtorrent.rc; done" > ./dist/bin/rt.sh
 chmod +x ./dist/bin/rt.sh
